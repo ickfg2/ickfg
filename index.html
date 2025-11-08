@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B站LV6教程 | 快速升级指南</title>
+  <!-- 引入Tailwind CSS和图标库 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- Tailwind配置 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FB7299', // B站粉色系主色
+            secondary: '#00A1D6', // B站蓝色辅助色
+            dark: '#18191C',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <!-- 自定义工具类 -->
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .link-hover {
+        @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+      }
+      .text-glow {
+        text-shadow: 0 0 10px rgba(251, 114, 153, 0.5);
+      }
+      .img-contain {
+        object-fit: contain;
+      }
+    }
+  </style>
+  
+  <!-- 全局样式 -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #F5F7FA;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <!-- 页面容器 -->
+  <div class="max-w-3xl w-full bg-white rounded-2xl shadow-xl p-8 sm:p-12 flex flex-col items-center text-center">
+    <!-- B站图标（删除粉色圆圈，直接展示图片） -->
+    <div class="w-32 h-32 mb-8">
+      <img 
+        src="https://logo800.cn/uploads/logoxinshang/56/logo800_16491624018615580.png" 
+        alt="B站图标" 
+        class="w-full h-full img-contain"
+        loading="lazy"
+      >
+    </div>
+    
+    <!-- 标题 -->
+    <h1 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-6">
+      B站等级快速提升指南
+    </h1>
+    
+    <!-- 核心链接 -->
+    <a 
+      href="https://www.bilibili.com/video/BV1GJ411x7h7" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="w-full max-w-md bg-primary text-white font-semibold py-4 px-8 rounded-xl link-hover flex items-center justify-center gap-3 mb-8"
+    >
+      <i class="fa fa-external-link text-xl"></i>
+      <span class="text-lg sm:text-xl text-glow">秒升lv6教程（不骗人）</span>
+    </a>
+    
+    <!-- 辅助说明 -->
+    <div class="text-gray-600 space-y-3 max-w-xl">
+      <p>
+        <i class="fa fa-info-circle text-secondary mr-2"></i>
+        点击上方链接即可跳转至B站视频页面，查看详细升级教程
+      </p>
+      <p>
+        <i class="fa fa-shield text-secondary mr-2"></i>
+        链接安全无广告，放心访问，建议收藏备用
+      </p>
+    </div>
+    
+    <!-- 底部装饰 -->
+    <div class="mt-12 flex gap-4">
+      <a href="https://www.bilibili.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary transition-colors">
+        <img 
+          src="https://logo800.cn/uploads/logoxinshang/56/logo800_16491624018615580.png" 
+          alt="B站官网" 
+          class="w-10 h-10 img-contain"
+          loading="lazy"
+        >
+      </a>
+      <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+        <i class="fa fa-share-alt text-2xl"></i>
+      </a>
+      <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+        <i class="fa fa-star text-2xl"></i>
+      </a>
+    </div>
+  </div>
+  
+  <!-- 页脚 -->
+  <footer class="mt-12 text-gray-500 text-sm">
+    <p>© 2025 B站教程分享 | 本页面仅提供视频链接跳转服务</p>
+  </footer>
+
+  <!-- 交互脚本 -->
+  <script>
+    // 链接点击反馈
+    const videoLink = document.querySelector('a[href="https://www.bilibili.com/video/BV1GJ411x7h7"]');
+    videoLink.addEventListener('click', function() {
+      this.classList.add('bg-secondary');
+      setTimeout(() => {
+        this.classList.remove('bg-secondary');
+      }, 500);
+    });
+    
+    // 页面加载动画
+    document.head.insertAdjacentHTML('beforeend', `
+      <style>
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.8s ease-out forwards;
+        }
+      </style>
+    `);
+    
+    // 页面加载动画执行
+    window.addEventListener('load', function() {
+      const container = document.querySelector('.max-w-3xl');
+      container.classList.add('animate-fade-in');
+    });
+  </script>
+</body>
+</html>
